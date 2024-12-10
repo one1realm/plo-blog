@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { render, screen, within } from "@testing-library/react";
-import Layout from "@/app/layout";
+import Layout, { metadata } from "@/app/layout";
 
 const { localFontMock } = vi.hoisted(() => ({
   localFontMock: vi
@@ -25,6 +25,18 @@ describe("Layout", () => {
       }
     );
     container = localContainer;
+  });
+
+  describe("metadata", () => {
+    it("exports 'metadata.title' with text 'A beginner's journey from Texas to Omaha'", () => {
+      expect(metadata.title).toBe("A beginner's journey from Texas to Omaha");
+    });
+
+    it("exports 'metadata.description' with text 'One year project of learning Pot Limit Omaha'", () => {
+      expect(metadata.description).toBe(
+        "One year project of learning Pot Limit Omaha"
+      );
+    });
   });
 
   it("loads exactly two fonts", () => {

@@ -15,7 +15,7 @@ vi.mock("@/components/Day1", () => {
 });
 
 describe("Home", () => {
-  it("contains 'Day 1' text", () => {
+  it("contains an element with data-testid: 'day-1'", () => {
     render(<Home />);
     expect(screen.getByTestId("day-1")).toBeInTheDocument();
   });
