@@ -32,13 +32,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <h1 data-testid="layout-h1">{title}</h1>
-        <h2 data-testid="layout-h2">{subtitle}</h2>
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            {children}
-          </main>
-        </div>
+        <main>
+          <div className="flex flex-col container mx-auto bg-slate-100 p-12">
+            <h1
+              className="mx-auto text-4xl text-center font-black mb-2"
+              data-testid="layout-h1"
+            >
+              {title}
+            </h1>
+            <h2
+              className="mx-auto text-xl text-center font-semibold"
+              data-testid="layout-h2"
+            >
+              {subtitle}
+            </h2>
+            <hr className="my-6" />
+            <div>{children}</div>
+          </div>
+        </main>
       </body>
     </html>
   );
